@@ -1,3 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.game{
+    font-weight: bold;
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    color:black;
+}
+
 .square{
     width: 100px;
     height: 100px;
@@ -6,5 +20,23 @@
     color:#000000;
     font-weight: bolder;
     padding-bottom: 25px;
-    font-size: 60px;
+    font-size: 30px;
+}
+
+.row{
+    display:flex;
+    flex-direction: row;
+}
+
+.b-bottom-r{
+    border-right: 7px solid black;
+    border-bottom: 7px solid black;
+}
+
+.b-bottom{
+    border-bottom: 7px solid black;
+}
+
+.b-right{
+    border-right: 7px solid black;
 }
