@@ -3,15 +3,28 @@ import './TicTacToe.css';
 import { Board } from "./Board";
 import { useState } from "react";
 
-const intialBoard=['0','1','2','3','4','5','6','7','8']
+const intialBoard=['','','','','','','','','']
 
 export const TicTacToe=()=>{
-    const[gameState,setGameState] = useState(intialBoard);
+    const [gameState,setGameState] = useState(intialBoard);
+    const [isXTurn, setIsXTurn] = useState(true);
+
+    const onSquareClick = (index)=>{
+        let strings = Array.from(gameState);
+        if(strings[index] !== '')
+        {
+            return;
+        }
+        strings[index] = isXTurn ? 'X' : 'O';
+        setGameState(strings);
+        setIsXTurn(!isXTurn);
+    }
+
     return(
         <div>
             <div className="game">
                 <h1>Tic-Tac-Toe</h1>
-                <Board gameState={gameState}/>
+                <Board gameState={gameState} onSquareClick={onSquareClick}/>
             </div>
         </div>
     );

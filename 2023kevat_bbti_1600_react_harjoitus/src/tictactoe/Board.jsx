@@ -1,11 +1,13 @@
 import React from "react";
 import { Square } from "./Square";
-export const Board = ({gameState})=>{
+export const Board = ({gameState, onSquareClick})=>{
     return(
         <div>
             <div className="row">
                 <Square className="b-bottom-r"
-                state ={gameState[0]}/>
+                state ={gameState[0]}
+                onClick={()=> onSquareClick(0)}
+                />
                 <Square className="b-bottom-r"
                 state ={gameState[1]}/>
                 <Square className="b-bottom"
