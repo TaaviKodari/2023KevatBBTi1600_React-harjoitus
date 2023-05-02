@@ -13,6 +13,18 @@ export const TicTacToe=()=>{
 
     const onSquareClick = (index)=>{
         let strings = Array.from(gameState);
+        
+        if(status.includes("Winner")){
+           return; 
+        }
+        else if(!gameState.includes('')){
+            setStatus("It's a draw");
+        }
+        else{
+            
+            setStatus(`${isXTurn ? 'X' : 'O'}'s turn`)
+        }
+        
         if(strings[index] !== '')
         {
             return;
